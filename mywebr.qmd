@@ -1,0 +1,48 @@
+---
+title: |
+  | My webR online calculator:
+  | Use R in the browser of your smartphone or tablet
+author: "Florian Pargent"
+lang: en
+date: last-modified
+date-format: "DD.MM.YYYY, HH:mm"
+format: html
+engine: knitr
+filters:
+  - webr
+---
+
+---
+
+## R console:
+
+```{webr-r}
+
+```
+
+---
+
+## Instructions:
+
+With **webR**[^1] you can run R commands directly in your browser without having R installed on your device (like a smartphone or tablet), e.g.:
+
+```{webr-r}
+n <- 100
+x <- rnorm(n, mean = 3, sd = 1)
+y <- 2 + 0.5 * x + rnorm(n, mean = 0, sd = 0.1)
+plot(x, y)
+```
+
+R packages can also be installed, e.g.:
+```{webr-r}
+pkg <- "pwr"
+webr::install(pkg)
+library(pkg, character.only = TRUE)
+```
+
+Current R version:
+```{r}
+R.version$version.string
+```
+
+[^1]: This website uses [webR for Quarto](https://github.com/coatless/quarto-webr). The code for this website lies [here](https://github.com/FlorianPargent/webr_quarto).
