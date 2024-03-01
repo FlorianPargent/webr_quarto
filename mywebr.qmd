@@ -41,7 +41,8 @@ library(pkg, character.only = TRUE)
 ```
 
 Current R version:
-```{r}
+```{webr-r}
+#| autorun: true
 R.version$version.string
 ```
 
